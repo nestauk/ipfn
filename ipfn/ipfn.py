@@ -225,11 +225,11 @@ class ipfn(object):
 
                 if den == 0:
                     table_update.loc[msk, weight_col] =\
-                        table_current.loc[feature, weight_col] *\
+                        table_current.loc[feature, [weight_col]] *\
                         xijk.loc[feature]
                 else:
                     table_update.loc[msk, weight_col] = \
-                        table_current.loc[feature, weight_col].astype(float) * \
+                        table_current.loc[feature, [weight_col]].astype(float) * \
                         xijk.loc[feature] / den
 
             table_update.reset_index(inplace=True)
